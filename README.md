@@ -1,66 +1,71 @@
-# Movie-Rating-Analysis-Using-R
-Movie Rating Analysis using R.   Analyzes a dataset of movies to find top-rated films, average ratings, and genre distribution, with visualizations using bar charts and pie charts.
-# 🎬 Movie Rating Analysis using R
+# -------------------------------
+# 1. Create Dataset
+# -------------------------------
 
-## 📌 Overview
-This project analyzes a dataset of movies using R to extract meaningful insights such as highest-rated movies, average ratings, and genre distribution. It also includes data visualization using graphs.
+movies <- data.frame(
+  Title = c("Inception", "Titanic", "Avengers", "Joker", "Frozen", "Interstellar", "Batman", "Coco"),
+  Genre = c("Sci-Fi", "Romance", "Action", "Drama", "Animation", "Sci-Fi", "Action", "Animation"),
+  Rating = c(8.8, 7.8, 8.0, 8.5, 7.5, 8.6, 7.9, 8.4)
+)
 
----
+# Display dataset
+print("Movie Dataset:")
+print(movies)
 
-## 📊 Features
-- Identify highest-rated movie
-- Calculate average rating
-- Analyze genre distribution
-- Sort movies by rating
-- Visualize data using:
-  - Bar charts
-  - Pie charts
 
----
+# -------------------------------
+# 2. Highest Rated Movie
+# -------------------------------
 
-## 🛠️ Technologies Used
-- R Programming Language
-- RStudio
+top_movie <- movies[which.max(movies$Rating), ]
+print("Highest Rated Movie:")
+print(top_movie)
 
----
 
-## 📂 Dataset
-The dataset includes:
-- Movie Title
-- Genre
-- Rating
+# -------------------------------
+# 3. Average Rating
+# -------------------------------
 
----
+avg_rating <- mean(movies$Rating)
+print("Average Rating:")
+print(avg_rating)
 
-## 💻 How to Run
-1. Open RStudio  
-2. Copy and paste the R code  
-3. Run the script  
-4. View outputs in Console and Plots panel  
 
----
+# -------------------------------
+# 4. Genre Distribution
+# -------------------------------
 
-## 📸 Output
-- Dataset table  
-- Highest-rated movie  
-- Average rating  
-- Genre frequency  
-- Bar graph (ratings)  
-- Pie chart (genre distribution)  
+genre_count <- table(movies$Genre)
+print("Genre Distribution:")
+print(genre_count)
 
----
 
-## 🚀 Future Improvements
-- Use real-world datasets (IMDb, Netflix)  
-- Add advanced visualization (ggplot2)  
-- Build a recommendation system  
+# -------------------------------
+# 5. Sort Movies by Rating
+# -------------------------------
 
----
+sorted_movies <- movies[order(-movies$Rating), ]
+print("Movies Sorted by Rating:")
+print(sorted_movies)
 
-## 📖 Conclusion
-This project demonstrates how basic data analysis and visualization can be performed using R to derive insights from structured data.
 
----
+# -------------------------------
+# 6. Bar Plot (Ratings)
+# -------------------------------
 
-## 👩‍💻 Author
-Sunayana Sinha
+barplot(movies$Rating,
+        names.arg = movies$Title,
+        main = "Movie Ratings Comparison",
+        xlab = "Movies",
+        ylab = "Ratings",
+        col = "pink",
+        border = "black")
+
+
+# -------------------------------
+# 7. Pie Chart (Genre Distribution)
+# -------------------------------
+
+pie(genre_count,
+    main = "Genre Distribution",
+    col = rainbow(length(genre_count)))
