@@ -61,4 +61,47 @@ This project demonstrates how basic data analysis and visualization can be perfo
 ---
 
 ## 👩‍💻 Author
-Your Name
+Sunayana Sinha
+
+---
+
+
+---
+
+## 🛠️ Requirements
+
+Make sure you have the following installed:
+
+- R (version 4.0 or above)
+- RStudio (recommended)
+
+### 🔗 Install R
+https://cran.r-project.org/
+
+### 🔗 Install RStudio
+https://posit.co/download/rstudio-desktop/
+
+---
+
+## 🚀 How to Run the Project
+
+### 🔹 Method 1: Using RStudio (Recommended)
+
+1. Open **RStudio**
+2. Click **File → New File → R Script**
+3. Paste the project code into the script
+4. Save the file as `movie_analysis.R`
+5. Click **Run** (or press `Cmd + Enter` / `Ctrl + Enter`)
+6. View:
+   - Output in **Console**
+   - Graphs in **Plots panel**
+
+---
+
+### 🔹 Method 2: Using Terminal
+
+1. Save the code in a file named `movie_analysis.R`
+2. Open terminal / command prompt
+3. Navigate to the file location:
+   ```bash
+   cd path/to/your/folder
